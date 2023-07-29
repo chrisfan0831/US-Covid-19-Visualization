@@ -1,0 +1,30 @@
+.page {
+  text-align: center;
+}
+#title {
+  margin-left: 100;
+}
+.chart {
+  justify-content: center;
+  text-align: center;
+}
+#tooltip {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.tooltip-line-chart {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

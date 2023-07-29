@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Data Visualization with D3.js</title>
-  <!-- Include D3.js library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
+  
 <body>
-  <!-- Your visualization will be added here -->
-  <div id="chart"></div>
-  <!-- Your JavaScript code will be added just before the closing body tag -->
+  <div class="page">
+    <h1>Covid-19 National Trend and Spread Over Time</h1>
+
+    <div class="chart" id="line-chart-cases">
+      <h2 id="title">Cases Trend Over Time</h2>
+    </div>
+
+    <div class="chart" id="line-chart-deaths">
+      <h2 id="title">Deaths Trend Over Time</h2>
+    </div>
+
+    <!-- Date Selection Bar -->
+    <div>
+      <h2 id="title">Cases and Death Distribution Across States</h2>
+      <label for="date-select">Select a Date:</label>
+      <input type="date" id="date-select">
+      <!-- Automated Button -->
+      <button id="automate-button">Automate</button>
+      <button id="stop-button">Stop</button>
+    </div>
+    
+    <div class="chart">
+      <div class="chart" id="bar-chart-cases"></div>
+    </div>
+
+    <div class="chart">
+      <div class="chart" id="bar-chart-deaths"></div>
+    </div>
+
+    <div id="tooltip"></div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 
