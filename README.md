@@ -1,4 +1,4 @@
-# US-Covid-19-Visualization
+# Unraveling the Pandemic: A COVID-19 Journey Across the U.S.
 Narrative visualization of the trend and spread of the covid-19 cases and death within U.S
 
 This visualization page aims to narratively show the trend of covid-19 cases and deaths within U.S and
