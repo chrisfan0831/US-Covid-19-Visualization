@@ -1,5 +1,6 @@
 # US-Covid-19-Visualization
 Narrative visualization of the trend and spread of the covid-19 cases and death within U.S
+https://chrisfan0831.github.io/US-Covid-19-Visualization/
 
 This visualization page aims to narratively show the trend of covid-19 cases and deaths within U.S and
 the severity of each state as of specific time. The data comes from the covid-19-date published by New York Time, 
