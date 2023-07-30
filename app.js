@@ -1,10 +1,11 @@
-// Set up the dimensions of the chart
-const margin = { top: 20, right: 100, bottom: 80, left: 100 };
-const width = 1000 - margin.left - margin.right;
-const height = 400 - margin.top - margin.bottom;
-
 // Load the CSV data
 d3.csv("data/us.csv").then((data) => {
+
+  // Set up the dimensions of the chart
+  const margin = { top: 20, right: 100, bottom: 30, left: 100 };
+  const width = 1000 - margin.left - margin.right;
+  const height = 400 - margin.top - margin.bottom;
+
   // Convert string dates to actual date objects
   const dateParser = d3.timeParse("%Y-%m-%d");
   data.forEach((d) => {
@@ -147,6 +148,11 @@ d3.csv("data/us.csv").then((data) => {
 
 // Load the CSV data
 d3.csv("data/us-states.csv").then((data) => {
+  // Set up the dimensions of the chart
+  const margin = { top: 20, right: 100, bottom: 80, left: 100 };
+  const width = 1000 - margin.left - margin.right;
+  const height = 400 - margin.top - margin.bottom;
+
   // Convert string dates to actual date objects
   const dateParser = d3.timeParse("%Y-%m-%d");
   data.forEach((d) => {
@@ -326,64 +332,64 @@ d3.csv("data/us-states.csv").then((data) => {
 
   let updateInterval;
 
- // Function to automate the date selection and chart updates
-  function automateCharts() {
-    const startDate = new Date(document.getElementById("date-select").value);
-    const endDate = d3.max(data, (d) => d.date); // Get the latest date from the data
+//  // Function to automate the date selection and chart updates
+//   function automateCharts() {
+//     const startDate = new Date(document.getElementById("date-select").value);
+//     const endDate = d3.max(data, (d) => d.date); // Get the latest date from the data
 
-    let currentDate = startDate;
-    const interval = 10; // Time interval between date changes in milliseconds
+//     let currentDate = startDate;
+//     const interval = 10; // Time interval between date changes in milliseconds
 
-    // Update the date selection and charts at the specified interval
-    updateInterval = setInterval(() => {
-      if (currentDate <= endDate) {
-        // Update the date selection
-        document.getElementById("date-select").valueAsDate = currentDate;
+//     // Update the date selection and charts at the specified interval
+//     updateInterval = setInterval(() => {
+//       if (currentDate <= endDate) {
+//         // Update the date selection
+//         document.getElementById("date-select").valueAsDate = currentDate;
 
-        // Update the charts
-        updateCasesChart(currentDate);
-        updateDeathsChart(currentDate);
+//         // Update the charts
+//         updateCasesChart(currentDate);
+//         updateDeathsChart(currentDate);
 
-        // Increment the current date
-        currentDate.setDate(currentDate.getDate() + 1);
-      } else {
-        // Stop the automated updates when the end date is reached
-        clearInterval(updateInterval);
+//         // Increment the current date
+//         currentDate.setDate(currentDate.getDate() + 1);
+//       } else {
+//         // Stop the automated updates when the end date is reached
+//         clearInterval(updateInterval);
 
-        // Enable the "Automate" button
-        document.getElementById("automate-button").disabled = false;
-        // Disable the "Stop" button
-        document.getElementById("stop-button").disabled = true;
-      }
-    }, interval);
+//         // Enable the "Automate" button
+//         document.getElementById("automate-button").disabled = false;
+//         // Disable the "Stop" button
+//         document.getElementById("stop-button").disabled = true;
+//       }
+//     }, interval);
 
-    // Disable the "Automate" button
-    document.getElementById("automate-button").disabled = true;
-    // Enable the "Stop" button
-    document.getElementById("stop-button").disabled = false;
-  }
+//     // Disable the "Automate" button
+//     document.getElementById("automate-button").disabled = true;
+//     // Enable the "Stop" button
+//     document.getElementById("stop-button").disabled = false;
+//   }
 
-  // Function to stop the automated updates
-  function stopAutomateCharts() {
-    // Clear the interval to stop automated updates
-    clearInterval(updateInterval);
+//   // Function to stop the automated updates
+//   function stopAutomateCharts() {
+//     // Clear the interval to stop automated updates
+//     clearInterval(updateInterval);
 
-    // Enable the "Automate" button
-    document.getElementById("automate-button").disabled = false;
-    // Disable the "Stop" button
-    document.getElementById("stop-button").disabled = true;
+//     // Enable the "Automate" button
+//     document.getElementById("automate-button").disabled = false;
+//     // Disable the "Stop" button
+//     document.getElementById("stop-button").disabled = true;
 
-    // Update the charts once the automation is stopped
-    const selectedDate = new Date(document.getElementById("date-select").value);
-    updateCasesChart(selectedDate);
-    updateDeathsChart(selectedDate);
-  }
+//     // Update the charts once the automation is stopped
+//     const selectedDate = new Date(document.getElementById("date-select").value);
+//     updateCasesChart(selectedDate);
+//     updateDeathsChart(selectedDate);
+//   }
 
-  // Event listener for the "Automate" button
-  document.getElementById("automate-button").addEventListener("click", automateCharts);
+//   // Event listener for the "Automate" button
+//   document.getElementById("automate-button").addEventListener("click", automateCharts);
 
-  // Event listener for the "Stop" button
-  document.getElementById("stop-button").addEventListener("click", stopAutomateCharts);
+//   // Event listener for the "Stop" button
+//   document.getElementById("stop-button").addEventListener("click", stopAutomateCharts);
 });
 
 

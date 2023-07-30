@@ -1,6 +1,12 @@
 .page {
   text-align: center;
 }
+p {
+  word-wrap: break-word;
+  /* width: 100px; */
+  margin-left: 20%;
+  margin-right: 20%;
+}
 #title {
   margin-left: 100;
 }

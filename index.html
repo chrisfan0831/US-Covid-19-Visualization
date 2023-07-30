@@ -9,24 +9,49 @@
   
 <body>
   <div class="page">
-    <h1>Covid-19 National Trend and Spread Over Time</h1>
+    <h1>Unraveling the Pandemic: A COVID-19 Journey Across the U.S.</h1>
+
+    <p>This visualization page aims to narratively show the trend of covid-19 cases and deaths within U.S and
+      the severity of each state as of specific time. The data comes from the covid-19-date puclished by New York Time, 
+      including the cumulative national cases and deaths over time, and the state-wise cases and deaths as of each date. 
+      The start date of the data is 2020-01-21, and as the time of publishing this visuzlization page, the end date in the 
+      data is 2023-03-23.</p>
 
     <div class="chart" id="line-chart-cases">
       <h2 id="title">Cases Trend Over Time</h2>
+      <p>The following chart represents the trend of covid-19 cases over time. Have your mouse hover over the line you'll be 
+         able to see the detail on demnd. </p>
     </div>
+
+    <p>As visualized by the blue line chart above, the overall trend of the line is concave up and continuesly become steeper, which means that
+       the infection is not under controlled for the most of the time. However, there's also some noticable elbow point that may convey interesting 
+       information, for example, for the first half of the 2021, the trend indicates that the infecton speed somehow becomes slower. And there is also a large
+       elbow point at 2022-02 that turns the trend from fast increase to gradully slow down till the end.
+    </p>
 
     <div class="chart" id="line-chart-deaths">
       <h2 id="title">Deaths Trend Over Time</h2>
+      <p>The following chart represents the trend of covid-19 deaths over time. Have your mouse hover over the line you'll be 
+        able to see the detail on demnd. </p>
     </div>
+
+    <p>According to the death trend above, different the previous cases trend, the overall trend of the deaths is concave up, which means that
+       the mortality rate was becoming lower and lower in contrast with the faster speed of infection. As you may notice, it is interesting that
+       the noticable elbow point on the deaths trend is similar to the cases trend. In the first half of the 2021, the lower slope indicates that 
+       the death speed somehow becomes slower. And a large elbow point at 2022-02 that turns the death trend from fast increase to gradully slow down till the end.
+    </p>
 
     <!-- Date Selection Bar -->
     <div>
       <h2 id="title">Cases and Death Distribution Across States</h2>
+      <p>The following charts represents the distribution of covid-19 cases (blue) and deaths (red) across U.S states at a specific time. Have your mouse hover over the bar and you'll be 
+        able to see the detail on demnd. The default date represented by the chart is 2022-01-01, which is the time the cases and death increase substantially so that it is a good representitive
+        of the distribution of the pandemic. There is also date selection bar, feel free to select other dates to explore the changes of the distribution</p>
       <label for="date-select">Select a Date:</label>
       <input type="date" id="date-select">
       <!-- Automated Button -->
-      <button id="automate-button">Automate</button>
-      <button id="stop-button">Stop</button>
+      <!-- <button id="automate-button">Automate</button>
+      <button id="stop-button">Stop</button> -->
     </div>
     
     <div class="chart">
@@ -36,6 +61,12 @@
     <div class="chart">
       <div class="chart" id="bar-chart-deaths"></div>
     </div>
+
+    <P>According to the bar charts above, it is noticable that the state with large population and maybe more travel attractive always have more cases and way mroe deaths
+      compared to other states. For example, California, Florida, New York, and Texas have way more cases and death of all time. Recall that the date range of this Visualization
+      is from 2020-1-21 to 2023-03-23, if you select dates in this range, you'll notice that height change of the bars are significate at the beginning, and varie less and less 
+      in the later time, which is basically consistant with the trend over time above. 
+    </P>
 
     <div id="tooltip"></div>
   </div>
